@@ -13,7 +13,7 @@ O(log₁₀ n)
 Space Complexity
 O(1)
 
-2)Problem
+2)Problem Reverse a number 
 Description
 This function reverses the digits of a given positive integer using mathematical operations.
 Logic
@@ -22,6 +22,22 @@ Remove last digit using / 10
 Build reverse using reverse = reverse * 10 + digit
 Input: 1234
 Output: 4321
+Complexity
+Time: O(d)
+Space: O(1)
+
+3)Palindrome Number Check
+Description
+This function checks whether a given integer is a palindrome. A palindrome number reads the same forward and backward.
+Logic
+Store the original number
+Reverse the number using % and /
+Compare original and reversed numbers
+If equal → palindrome, else → not palindrome
+Input: 121
+Output: true
+Input: 123
+Output: false
 Complexity
 Time: O(d)
 Space: O(1)
