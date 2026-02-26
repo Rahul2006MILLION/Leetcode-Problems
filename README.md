@@ -13,6 +13,21 @@ O(log₁₀ n)
 Space Complexity
 O(1)
 
+2)Problem
+Description
+This function reverses the digits of a given positive integer using mathematical operations.
+Logic
+Extract last digit using % 10
+Remove last digit using / 10
+Build reverse using reverse = reverse * 10 + digit
+Input: 1234
+Output: 4321
+Complexity
+Time: O(d)
+Space: O(1)
+
+
+
 
 
 
