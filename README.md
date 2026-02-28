@@ -13,6 +13,8 @@ O(log₁₀ n)
 Space Complexity
 O(1)
 
+---------------------------------------------------------
+
 2)Problem Reverse a number 
 Description
 This function reverses the digits of a given positive integer using mathematical operations.
@@ -26,6 +28,8 @@ Complexity
 Time: O(d)
 Space: O(1)
 
+
+---------------------------------------------------------
 3)Palindrome Number Check
 Description
 This function checks whether a given integer is a palindrome. A palindrome number reads the same forward and backward.
@@ -41,6 +45,33 @@ Output: false
 Complexity
 Time: O(d)
 Space: O(1)
+
+---------------------------------------------------------
+4) Armstrong Number Checker (Java)
+An Armstrong number is a number equal to the sum of its digits raised to the power of the number of digits.
+153 = 1³ + 5³ + 3³ = 153
+Logic
+  1. Count digits using while loop.
+  2. Extract each digit using `% 10`.
+  3. Calculate power using:
+   * `Math.pow(digit, count)` or
+   * for loop (multiply digit count times)
+  4. Add results and compare with original number.
+  ## Math.pow()
+Built-in Java function to calculate power:
+sum += (int)Math.pow(digit, count);
+for loop method
+Alternative without Math.pow():
+power = 1;
+for(int i=0;i<count;i++)
+    power *= digit;
+## Time Complexity
+Let d = number of digits
+Math.pow() method → O(d)
+for loop method → O(d²)
+
+---------------------------------------------------------
+
 
 
 
