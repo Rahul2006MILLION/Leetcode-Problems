@@ -71,7 +71,23 @@ Math.pow() method → O(d)
 for loop method → O(d²)
 
 ---------------------------------------------------------
+5)Divisors of a Number (Java)
+This program finds all divisors of a given number using `ArrayList<Integer>` and returns them as an array.
 
+How it Works
+* Loop from `1` to `n`
+* Store divisors in `ArrayList`
+* Convert to array and return
+* Print the result
+
+Example
+Input: 38
+Output:
+1 2 19 38
+
+Time Complexity
+O(n)
+---------------------------------------------------------
 
 
 
