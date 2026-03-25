@@ -11,7 +11,7 @@ Output:
 * Time: O(n²), Space: O(1)
 * Indices: 0, 1
 ---------------------------------------------------------
-#Buy & Sell Stocks (Java)
+# Buy & Sell Stocks (Java)
 This Java program calculates the **maximum profit** from buying and selling a stock given its daily prices.
 
 ## Example
