@@ -37,17 +37,15 @@ Output:
 This project demonstrates how to efficiently detect duplicates in an array using a **HashSet (Java)** and **set (Python)**.
 The approach ensures optimal performance with **O(n) time complexity**.
 
----
 ## ⚙️ How It Works:
 * Traverse the array
 * Store elements in a set
 * Before inserting, check if the element already exists
 * If yes → duplicate found
----
-
+* 
 ## 🚀 Java Implementation
 Java code is available in the uploaded file!
----
+
 ## 🐍 Python Implementation
 ```python
 def has_duplicate(nums):
@@ -65,16 +63,14 @@ def has_duplicate(nums):
 nums = [1, 2, 3, 1]
 print(has_duplicate(nums))
 ```
----
 ## 📊 Complexity Analysis
 
 | Operation        | Complexity |
 | ---------------- | ---------- |
 | Time Complexity  | O(n)       |
 | Space Complexity | O(n)       |
----
-## 💡 Key Concepts
 
+## 💡 Key Concepts:
 * HashSet (Java) / set (Python)
 * Constant time lookup → O(1)
 * Efficient duplicate detection
