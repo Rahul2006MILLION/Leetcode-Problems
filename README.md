@@ -76,3 +76,44 @@ print(has_duplicate(nums))
 * Efficient duplicate detection
 
 ---------------------------------------------------------
+# Product of Array Except Self (Java)
+
+## 📌 Overview
+This project implements the classic **"Product of Array Except Self"** problem in Java.
+Given an integer array, the goal is to return a new array such that each element at index `i` is the product of all elements in the original array except `arr[i]`.
+## 🚀 Example
+### Input
+```java
+arr = {2, 1, 3, 4}
+```
+### Output
+```java
+[12, 24, 8, 6]
+```
+## 🧠 Approach
+The solution avoids division and uses two auxiliary arrays:
+
+### 1. Left Product Array
+* Stores product of all elements to the **left** of each index
+
+### 2. Right Product Array
+* Stores product of all elements to the **right** of each index
+
+### 3. Final Result
+* Multiply corresponding values:
+```text
+result[i] = left[i] * right[i]
+```
+## ⏱️ Complexity
+
+* **Time Complexity:** O(n)
+* **Space Complexity:** O(n)
+
+## 💡 Key Concepts
+* Prefix products (left array)
+* Suffix products (right array)
+* Array traversal
+* Avoiding division
+---------------------------------------------------------
+
+
