@@ -115,5 +115,54 @@ result[i] = left[i] * right[i]
 * Array traversal
 * Avoiding division
 ---------------------------------------------------------
+# Kadane’s Algorithm – Maximum Subarray Sum (Java)
+
+## 📌 Overview
+This program implements **Kadane’s Algorithm** to find the **maximum sum of a contiguous subarray** in a given integer array.
+It efficiently solves the problem in **O(n)** time by iterating through the array only once.
+
+## 🧠 Problem Statement
+Given an integer array `arr`, find the contiguous subarray (containing at least one element) which has the **largest sum**, and return that sum.
+## 🚀 Approach (Kadane’s Algorithm)
+
+We maintain two variables:
+* `cur_sum` → stores the current subarray sum
+* `max_sum` → stores the maximum sum found so far
+
+### Steps:
+
+1. Traverse the array.
+2. Add each element to `cur_sum`.
+3. Update `max_sum` if `cur_sum` is greater.
+4. If `cur_sum` becomes negative, reset it to `0`.
+
+## 📊 Example
+
+### Input:
+```
+[-2, -3, -7, -2, -10, -4]
+```
+### Output:
+```
+-2
+```
+### Explanation:
+All numbers are negative, so the maximum subarray is the **least negative number**.
+
+## ⚡ Time & Space Complexity
+* **Time Complexity:** O(n)
+* **Space Complexity:** O(1)
+  
+## 🔑 Key Insight
+* If the current sum becomes negative, it will only decrease future sums → reset it.
+* Always update `max_sum` **before resetting** to handle all-negative arrays.
+
+## 🧪 Try More Test Cases
+```
+[2, 3, 5, -2, 7, -4] → Output: 15
+[-1, 2, 3, -1, 2, -6, 5] → Output: 6
+```
+---------------------------------------------------------
+
 
 
