@@ -163,6 +163,23 @@ All numbers are negative, so the maximum subarray is the **least negative number
 [-1, 2, 3, -1, 2, -6, 5] → Output: 6
 ```
 ---------------------------------------------------------
+# Maximum Subarray Product (Java)
 
+## Problem
+
+Find the contiguous subarray with the maximum product.
+
+## Approach
+
+* Traverse left → right and right → left
+* Maintain running products
+* Reset to `1` when encountering `0`
+* Take the maximum from both passes
+
+## Complexity
+
+* Time: O(n)
+* Space: O(1)
+---------------------------------------------------------
 
 
