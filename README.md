@@ -1,7 +1,7 @@
 # Leetcode-Problems
 Collection of LeetCode problem solutions with explanations and optimized approaches.
 
-# Two Sum (Java)
+# 1 Two Sum (Java)
 
 Simple Java program to find indices of two numbers in an array that add up to a target.
 Input:
@@ -12,7 +12,7 @@ Output:
 * Time: O(n²), Space: O(1)
 * Indices: 0, 1
 ---------------------------------------------------------
-# Buy & Sell Stocks (Java)
+# 121 Buy & Sell Stocks (Java)
 This Java program calculates the **maximum profit** from buying and selling a stock given its daily prices.
 
 ## Example
@@ -31,7 +31,7 @@ Output:
 * Time: **O(n)**
 * Space: **O(1)**
 ---------------------------------------------------------
-# 🔍 Duplicate Finder (Java and Python)
+# 🔍 287 Duplicate Finder (Java and Python)
 
 ## 📌 Overview
 This project demonstrates how to efficiently detect duplicates in an array using a **HashSet (Java)** and **set (Python)**.
@@ -76,7 +76,7 @@ print(has_duplicate(nums))
 * Efficient duplicate detection
 
 ---------------------------------------------------------
-# Product of Array Except Self (Java)
+# 238 Product of Array Except Self (Java)
 
 ## 📌 Overview
 This project implements the classic **"Product of Array Except Self"** problem in Java.
@@ -115,7 +115,7 @@ result[i] = left[i] * right[i]
 * Array traversal
 * Avoiding division
 ---------------------------------------------------------
-# Kadane’s Algorithm – Maximum Subarray Sum (Java)
+# 53 Kadane’s Algorithm – Maximum Subarray Sum (Java)
 
 ## 📌 Overview
 This program implements **Kadane’s Algorithm** to find the **maximum sum of a contiguous subarray** in a given integer array.
@@ -163,7 +163,7 @@ All numbers are negative, so the maximum subarray is the **least negative number
 [-1, 2, 3, -1, 2, -6, 5] → Output: 6
 ```
 ---------------------------------------------------------
-# Maximum Subarray Product (Java)
+# 152 Maximum Subarray Product (Java)
 
 ## Problem
 
@@ -181,5 +181,26 @@ Find the contiguous subarray with the maximum product.
 * Time: O(n)
 * Space: O(1)
 ---------------------------------------------------------
+# 📘 153 Find Minimum in Rotated Sorted Array
+This Java program finds the **minimum element** in a rotated sorted array using a simple linear scan.
 
+## ⚙️ Approach
+- Initialize `min = 0`
+- Traverse the array
+- Update `min` whenever a smaller element is found
+
+## 🧪 Example
+Input:
+[4, 5, 6, 7, -7, 1, 2, 3]
+
+Output:
+-7
+
+## ⏱️ Complexity
+- Time: O(n)
+- Space: O(1)
+
+## ⚠️ Note
+- This is a brute-force approach
+- Optimal solution exists using Binary Search (O(log n))
 
