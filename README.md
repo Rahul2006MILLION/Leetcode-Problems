@@ -203,4 +203,65 @@ Output:
 ## ⚠️ Note
 - This is a brute-force approach
 - Optimal solution exists using Binary Search (O(log n))
+---------------------------------------------------------
+# 🔍 Search in Rotated Sorted Array (Basic Approach)
 
+## 📌 Overview
+This program searches for a target element in a rotated sorted array using a **linear search approach**.
+A rotated sorted array is an array that was originally sorted but then shifted (rotated) at some pivot point.
+**Example:**
+```
+Original: [0,1,2,4,5,6,7]
+Rotated:  [4,5,6,7,0,1,2]
+```
+## ⚙️ Approach Used
+This implementation uses a **simple linear scan**:
+
+1. Traverse the array from start to end.
+2. Compare each element with the target.
+3. If found → return the index.
+4. If not found → return `-1`.
+   
+## 🧠 Logic
+* Loop through the array
+* Check:
+  ```
+  if(arr[i] == target)
+  ```
+* Return index immediately when found
+* If loop ends → target does not exist
+
+## ⏱️ Time & Space Complexity
+| Metric | Value |
+| ------ | ----- |
+| Time   | O(n)  |
+| Space  | O(1)  |
+
+## ✅ Example
+**Input:**
+```
+nums = [4,5,6,7,0,1,2]
+target = 1
+```
+**Output:**
+```
+5
+```
+
+## ⚠️ Note
+
+* This is a **brute-force approach**
+* It does **not utilize the sorted + rotated property**
+* Optimal solution uses **Binary Search (O(log n))**
+
+## 🚀 When to Use
+
+* Small datasets
+* When simplicity matters more than performance
+* For learning / debugging purposes
+
+
+## 💡 Key Takeaway
+> This solution works correctly but is not optimal.
+> The real challenge is solving it using binary search on a rotated array.
+---------------------------------------------------------
