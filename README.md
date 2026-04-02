@@ -11,6 +11,42 @@ Output:
 * Uses brute-force (nested loops)
 * Time: O(n²), Space: O(1)
 * Indices: 0, 1
+
+BRUTE FORCE METHOD TAKES n^2 TIME COMPLEXITY SO WE USE HASHMAP<> TO SOLVE THIS 
+
+## 📌 Problem
+Find two indices such that:
+```
+arr[i] + arr[j] = target
+```
+## 🚀 Approach (HashMap / Dictionar)
+* Store: `number → index`
+* For each element:
+  * Compute `y = target - arr[i]`
+  * If `y` exists → return indices
+  * Else → store current element
+## ✅ Code
+```python
+def twoSum(arr, target):
+    mp = {}
+
+    for i in range(len(arr)):
+        y = target - arr[i]
+
+        if y in mp:
+            return [mp[y], i]
+
+        mp[arr[i]] = i
+
+    return []
+```
+
+## ⏱ Complexity
+* Time: O(n)
+* Space: O(n)
+
+## 💡 Key Idea
+> Check first → then insert
 ---------------------------------------------------------
 # 121 Buy & Sell Stocks (Java)
 This Java program calculates the **maximum profit** from buying and selling a stock given its daily prices.
