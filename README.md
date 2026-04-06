@@ -301,3 +301,138 @@ target = 1
 > This solution works correctly but is not optimal.
 > The real challenge is solving it using binary search on a rotated array.
 ---------------------------------------------------------
+# 🧩 3Sum Problem (Hashing Approach)
+## 📌 Problem
+Given an integer array `nums`, return all **unique triplets** `[a, b, c]` such that:
+```
+a + b + c = 0
+```
+## 🚀 Approach: Hashing (Set-Based 2Sum inside 3Sum)
+Instead of using brute force `O(n³)`, we optimize to **O(n²)** by:
+1. Fixing one element (`nums[i]`)
+2. Solving a **2Sum problem** for the remaining elements using a set
+## 🧠 Core Idea
+
+For each `i`, we want:
+```
+nums[i] + nums[j] + third = 0
+```
+Rearrange:
+```
+third = -(nums[i] + nums[j])
+```
+Now the task becomes:
+> Check if `third` already exists in previously seen elements
+
+## ✅ Code
+
+```python
+def threeSum(self, nums: list[int]) -> list[list[int]]:
+    st = set()
+
+    for i in range(len(nums)):
+        hset = set()
+
+        for j in range(i + 1, len(nums)):
+            third = -(nums[i] + nums[j])
+
+            if third in hset:
+                temp = [nums[i], nums[j], third]
+                temp.sort()
+                st.add(tuple(temp))
+
+            hset.add(nums[j])
+
+    return [list(x) for x in st]
+```
+## 🔁 Loop Breakdown
+### 🔹 Outer Loop (`i`)
+* Fixes one element
+* Converts problem into **2Sum**
+
+### 🔹 Inner Loop (`j`)
+* Iterates over remaining elements
+* Uses `hset` to track seen values
+
+## 📦 Why `hset` is inside the loop?
+```python
+for i:
+    hset = set()
+```
+Each `i` creates a **new 2Sum problem**, so:
+
+* We need a **fresh set**
+* Prevent mixing values from previous iterations
+
+## ⚡ Why use a Set (`hset`)?
+Set provides:
+* **O(1) lookup time**
+
+This avoids:
+* Nested loops → reduces complexity from `O(n³)` → `O(n²)`
+
+## 🔒 Why convert list → tuple?
+```python
+st.add(tuple(temp))
+```
+## ❌ Lists cannot be added to a set
+* Lists are **mutable**
+* Sets require **immutable (hashable)** elements
+### ✅ Tuples are allowed
+* Tuples are **immutable**
+* Can be stored in a set
+
+## 🔁 Why sort before adding?
+```python
+temp.sort()
+```
+Ensures:
+```
+[-1, 0, 1] == [0, -1, 1]
+```
+Without sorting:
+* Duplicate triplets would be stored differently
+## 📤 Why convert tuple → list in return?
+```python
+return [list(x) for x in st]
+```
+Because:
+* Problem expects `List[List[int]]`
+* But we stored results as `set[tuple]` for uniqueness
+## 📊 Example
+Input:
+```
+nums = [-1, 0, 1, 2, -1, -4]
+```
+Output:
+```
+[
+  [-1, 0, 1],
+  [-1, -1, 2]
+]
+```
+
+## ⏱ Complexity
+
+| Type  | Complexity |
+| ----- | ---------- |
+| Time  | O(n²)      |
+| Space | O(n)       |
+
+## 🎯 Key Takeaways
+* Convert 3Sum → multiple 2Sum problems
+* Use `set` for fast lookup
+* Use `tuple` for storing unique triplets
+* Sort triplets to avoid duplicates
+
+
+## 🧠 One-Line Summary Java Program
+This solution uses Java’s `HashSet` to optimize the 3Sum problem from O(n³) to O(n²) by reducing it to multiple 2Sum problems. For 
+each element `nums[i]`, we create a new `HashSet<Integer>` to track seen values and compute the required third value using `third =
+(nums[i] + nums[j])`. The `set.contains(third)` operation provides O(1) lookup, making the approach efficient. To avoid duplicate 
+triplets, we store results in a `Set<List<Integer>>`, ensuring uniqueness automatically. Before adding, we sort each triplet using 
+`Arrays.sort()` so that different permutations map to the same representation. Since Java sets cannot store primitive arrays directly 
+for uniqueness, we convert the sorted array into a list using `Arrays.asList()`. The inner `HashSet` is reinitialized for every `i` to 
+ensure independent 2Sum computations. This approach leverages Java Collections Framework features like `HashSet`, `List`, and utility 
+methods from `Arrays` for clean and efficient implementation.
+---------------------------------------------------------
