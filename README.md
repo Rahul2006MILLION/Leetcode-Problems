@@ -425,8 +425,8 @@ Output:
 * Use `tuple` for storing unique triplets
 * Sort triplets to avoid duplicates
 
+🧠 One-Line Summary Java Program
 
-## 🧠 One-Line Summary Java Program
 This solution uses Java’s `HashSet` to optimize the 3Sum problem from O(n³) to O(n²) by reducing it to multiple 2Sum problems. For 
 each element `nums[i]`, we create a new `HashSet<Integer>` to track seen values and compute the required third value using `third =
 (nums[i] + nums[j])`. The `set.contains(third)` operation provides O(1) lookup, making the approach efficient. To avoid duplicate 
