@@ -463,3 +463,63 @@ This program solves the "Container With Most Water" problem using the two-pointe
 
 ### 🚀 Key Idea
 Always move the smaller height pointer because the area is limited by the shorter line, and moving the taller one won’t help increase the area.
+
+---------------------------------------------------------
+# 🔢 Number of 1 Bits (LeetCode 191)
+## 📌 Problem
+Count the number of `1`s in the binary representation of an integer.
+
+## 💡 Approach
+* Convert number to binary using `% 2` and `/ 2`
+* Count how many times `1` appears
+
+## 🧾 Code
+```java
+import java.util.ArrayList;
+
+public class Numbers_of_1_bits {
+    public static void main(String[] args){
+        int n = 11, count = 0;
+
+        while(n > 0){
+            if(n % 2 == 1){
+                count++;
+            }
+            n = n / 2;
+        }
+
+        System.out.println(count);
+    }
+}
+```
+## ⏱ Complexity
+
+* Time: O(log n)
+* Space: O(1)
+---------------------------------------------------------
+# ➕ Sum of Two Integers (LeetCode 371)
+## 📌 Problem
+
+Return the sum of two integers `a` and `b`.
+## 💡 Approach
+
+Simple addition using `a + b`.
+## 🧾 Code
+
+```java
+public class Sum_of_two_integers {
+    public static int check(int a, int b){
+        return a + b;
+    }
+
+    public static void main(String[] args){
+        System.out.println(check(5, 9));
+    }
+}
+```
+
+## ⏱ Complexity
+* Time: O(1)
+* Space: O(1)
+
+
