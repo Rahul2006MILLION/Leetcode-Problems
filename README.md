@@ -521,5 +521,34 @@ public class Sum_of_two_integers {
 ## ⏱ Complexity
 * Time: O(1)
 * Space: O(1)
+---------------------------------------------------------
+# 📊 LeetCode 338 - Counting Bits
 
+## 📌 Problem
+
+Given an integer `n`, return an array where `result[i]` is the number of 1s in the binary representation of `i`.
+
+## 💡 Approach
+
+Use Dynamic Programming:
+`result[i] = result[i / 2] + (i % 2)`
+
+## ⚙️ Code
+
+```java
+class Solution {
+    public int[] countBits(int n) {
+        int[] result = new int[n + 1];
+        for (int i = 1; i <= n; i++) {
+            result[i] = result[i / 2] + (i % 2);
+        }
+        return result;
+    }
+}
+```
+
+## 📈 Complexity
+
+Time: O(n)
+Space: O(n)
 
