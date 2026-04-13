@@ -552,3 +552,33 @@ class Solution {
 Time: O(n)
 Space: O(n)
 
+---------------------------------------------------------
+# Reverse Bits (LeetCode 190)
+
+## 🧠 Problem
+Given a 32-bit integer, reverse its bits.
+## ⚙️ Approach
+
+We process the number **bit by bit**:
+* Extract the last bit using `n & 1`
+* Shift the result left to make space
+* Add the extracted bit to the result
+* Shift `n` right to move to the next bit
+* 
+## 🔁 Core Logic
+Repeat 32 times:
+* `result <<= 1`
+* `result |= (n & 1)`
+* `n >>= 1`
+
+## 💡 Key Idea
+👉 Take bits from the **right of `n`** and build the result from the **left** → this reverses the binary.
+
+## ⏱ Complexity
+* Time: O(32) → O(1)
+* Space: O(1)
+## 🚀 Summary
+Pop bits from `n`, push into `result` → reversed bits.
+
+---------------------------------------------------------
+
