@@ -581,4 +581,95 @@ Repeat 32 times:
 Pop bits from `n`, push into `result` → reversed bits.
 
 ---------------------------------------------------------
+# Counting Stairs (Java)
+## 📌 Problem Description
+This program solves the classic **Climbing Stairs** problem:
 
+> Given `n` steps, you can climb either **1 step or 2 steps at a time**.
+> Find the total number of distinct ways to reach the top.
+
+## 🧠 Approach
+The problem follows a **dynamic programming** pattern similar to the Fibonacci sequence.
+
+* To reach step `n`, you can come from:
+
+  * Step `n-1` (1 step jump)
+  * Step `n-2` (2 step jump)
+
+So,
+
+```
+f(n) = f(n-1) + f(n-2)
+```
+
+Base cases:
+
+* `f(1) = 1`
+* `f(2) = 2`
+
+
+## 💻 Code Overview
+
+* The function `stairs(int n)` computes the number of ways.
+* Uses an array to store intermediate results (DP approach).
+* Time Complexity: **O(n)**
+* Space Complexity: **O(n)**
+ 
+## ▶️ How to Run
+### 1. Compile
+
+```bash
+javac Counting_Stairs.java
+```
+
+### 2. Run
+
+```bash
+java Counting_Stairs
+```
+## 📥 Sample Input
+
+```java
+int n = 5;
+```
+## 📤 Output
+```
+8
+```
+## 📊 Explanation for n = 5
+
+Ways to reach step 5:
+
+* 1+1+1+1+1
+* 1+1+1+2
+* 1+1+2+1
+* 1+2+1+1
+* 2+1+1+1
+* 2+2+1
+* 2+1+2
+* 1+2+2
+ 
+Total = **8 ways**
+## ⚠️ Edge Cases
+* `n <= 0` → returns `0`
+* `n = 1` → returns `1`
+* `n = 2` → returns `2`
+
+## 🚀 Possible Optimization
+You can reduce space complexity to **O(1)** by storing only the last two values instead of using an array.
+
+## 📁 File Structure
+```
+Counting_Stairs.java
+README.md
+```
+
+## 🧩 Key Concepts
+* Dynamic Programming (DP)
+* Fibonacci Pattern
+* Iterative Solution
+
+## ✅ Status
+✔️ Working and tested for standard inputs
+✔️ Handles edge cases
+✔️ Easy to understand and extend
