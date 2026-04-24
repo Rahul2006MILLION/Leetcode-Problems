@@ -673,3 +673,121 @@ README.md
 ✔️ Working and tested for standard inputs
 ✔️ Handles edge cases
 ✔️ Easy to understand and extend
+
+---------------------------------------------------------
+# Coin Change 2 (Java - Recursion)
+
+## 📌 Problem Statement
+
+Given an array of coin denominations and a target amount, find the **number of combinations** that make up that amount.
+
+* You have **unlimited supply** of each coin.
+* Order of coins **does not matter**.
+
+## 🧠 Approach Used
+This solution uses **recursion with two choices at every step**:
+
+1. **Take the coin**
+
+   * Stay at the same index
+   * Reduce the amount
+
+2. **Skip the coin**
+
+   * Move to the next index
+   * Keep the amount unchanged
+
+Final answer =
+
+```
+ways = take + skip
+```
+
+## 🔍 Base Cases
+
+* If `amount == 0` → return `1`
+  (Found a valid combination)
+
+* If `i == coins.length` → return `0`
+  (No coins left but amount not formed)
+
+* If `coins[i] > amount` → skip this coin
+## 💻 Code
+
+```java
+public class Coin_Change_2 {
+    public static int solve(int i,int amount,int coins[]){
+        int n=coins.length;
+
+        if(amount==0){
+            return 1;
+        }
+
+        if(i==n){
+            return 0;
+        }
+
+        if(coins[i]>amount){
+            return solve(i+1, amount, coins);
+        }
+
+        int take=solve(i, amount-coins[i], coins);
+        int skip=solve(i+1, amount, coins);
+
+        return take+skip;
+    }
+
+    public static void main(String[] args){
+        int[] coins={1,2,5};
+        int amount=5;
+
+        int ans = solve(0, amount, coins);
+        System.out.println(ans);
+    }
+}
+```
+
+## 📊 Example
+
+### Input
+
+```
+coins = [1,2,5]
+amount = 5
+```
+
+### Output
+
+```
+4
+```
+
+### Valid Combinations
+
+```
+[1,1,1,1,1]
+[1,1,1,2]
+[1,2,2]
+[5]
+```
+## ⏱️ Complexity
+* **Time Complexity:** Exponential (≈ O(2^n))
+* **Space Complexity:** O(n) recursion stack
+
+## ⚠️ Note
+This is a **basic recursive solution** and is not optimized.
+For better performance:
+
+* Use **Memoization (Top-Down DP)** or
+* **Tabulation (Bottom-Up DP)**
+
+## 🚀 Key Insight
+
+At every step:
+
+```
+take → use the coin again
+skip → move to next coin
+```
+This ensures all possible combinations are explored.
+
